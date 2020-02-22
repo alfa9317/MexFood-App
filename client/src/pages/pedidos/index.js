@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Pedidos(props) {
+function Orders(props) {
   return (
     <div className="mainContainer">
         <h1>Hi! Im the Pedidos page</h1>
@@ -10,4 +10,4 @@ function Pedidos(props) {
 }
 
 
-export default Pedidos;
+export default Orders;
