@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Perfil(props) {
+function Profile(props) {
   return (
     <div className="mainContainer">
         <h1>Hi! Im the Perfil page</h1>
@@ -10,4 +10,4 @@ function Perfil(props) {
 }
 
 
-export default Perfil;
+export default Profile;
