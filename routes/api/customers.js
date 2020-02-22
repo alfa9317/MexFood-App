@@ -6,6 +6,8 @@ router.route("/api/customers")
 
 router.route("/api/customers/:id")
   .get(customersController.findById)
+  .put(customersController.update)
+  .delete(customersController.remove)
 
 router.route("/api/newCustomer")
   .post(customersController.create);

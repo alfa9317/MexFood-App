@@ -29,5 +29,23 @@ module.exports = {
         res.json("There is a customer registered with same email");
       }
     });
+  },
+  update: function(req, res) {
+    db.Customer.update(req.body, {
+      where: {
+        email: req.body.email
+      }
+    }).then(function(dbCustomer) {
+      res.json(dbCustomer);
+    });
+  },
+  remove: function(req, res) {
+    db.Customer.destroy({
+      where: {
+        email: req.body.email
+      }
+    }).then(function(dbCustomer) {
+      res.json(dbCustomer);
+    });
   }
 };
