@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-function Perfil(props) {
+function Orders(props) {
   return (
     <div className="mainContainer">
-        <h1>Hi! Im the Perfil page</h1>
+        <h1>Hi! Im the Pedidos page</h1>
     </div>
   );
 }
 
 
-export default Perfil;
+export default Orders;

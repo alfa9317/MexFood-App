@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-function Pedidos(props) {
+function Profile(props) {
   return (
     <div className="mainContainer">
-        <h1>Hi! Im the Pedidos page</h1>
+        <h1>Hi! Im the Perfil page</h1>
     </div>
   );
 }
 
 
-export default Pedidos;
+export default Profile;
