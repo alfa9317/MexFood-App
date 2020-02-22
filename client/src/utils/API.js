@@ -34,6 +34,10 @@ export default {
     return axios.get("/api/ordersDetail/"+id);
   },
 
+  createOrder: function (orderInfo) {
+    return axios.post("/api/orders/", orderInfo);
+  },
+
   updateOrder: function (orderInfo) {
     return axios.put("/api/orders/", orderInfo);
   },
