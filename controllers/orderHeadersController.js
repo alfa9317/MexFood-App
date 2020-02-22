@@ -77,6 +77,15 @@ module.exports = {
       res.json("Se creo el pedido " + dbOrderHeader.id);
     });
   },
+  update: function(req, res) {
+    db.OrderHeader.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbOrderHeader) {
+      res.json(dbOrderHeader);
+    });
+  },
   remove: function(req, res) {
      db.OrderHeader.destroy({
        where: {
