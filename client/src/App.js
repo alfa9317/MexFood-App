@@ -7,6 +7,8 @@ import AboutUs from "./pages/AboutUs"
 import Menu from "./pages/Menu"
 import Orders from "./pages/Orders"
 import Profile from "./pages/Profile"
+import Button from '@material-ui/core/Button';
+import NavBar from "./components/NavBar"
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
          <Route exact path="/profile" component={Profile} />
        </div>
       </Router>
+      
     );
 }
 

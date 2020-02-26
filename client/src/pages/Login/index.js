@@ -7,7 +7,7 @@ function Login(props) {
         <div className="blur"></div>
         <div className="container">
             <div className="row login">
-                <div className="col s12 14 offset-14">
+                <div className="col s8 8 offset-s2">
                     <div className="card">
                         <div className="card-action pink darken-1 white-text center-align">
                             <h3>Inicio de sesión</h3>
@@ -28,7 +28,7 @@ function Login(props) {
                                 </label>
                             </div><br/>
                             <div className="form-field center-align">
-                                <button className="pink darken-1">Continuar</button>
+                                <button className="pink darken-1 waves-effect waves-light">Continuar</button>
                             </div><br/>
                         </div>
                     </div>
