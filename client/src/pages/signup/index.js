@@ -50,6 +50,7 @@ function Signup() {
                             </div>
                             <br/>
                             
+                            <div> </div>
 
                             <div className="form-field center-align">
                                 <button className="pink darken-1">Registrarme</button>
