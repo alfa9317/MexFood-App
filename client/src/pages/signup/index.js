@@ -14,35 +14,41 @@ function Signup() {
                         </div>
                         <div className="card-content left-align">
                             <div className="form-field">
-                                <label for="username">¿Cuál es tu nombre?</label>
+                                <label>¿Cuál es tu nombre?</label>
                                 <input type="text" id="username" autocomplete="off"/>
                             </div>
+                            <br/>
 
                             <div className="form-field">
-                                <label for="password">Crea una contraseña</label>
+                                <label>Crea una contraseña</label>
                                 <input type="password" id="password"/>
                             </div>
+                            <br/>
+
 
                             <div className="form-field">
-                                <label for="username">Ingresa tu e-mail</label>
-                                <input type="text" id="email" autocomplete="off"/>
+                                <label>¿Cómo te contactamos?</label>
+                                <div className="contactinfo">
+                                    <input placeholder="E-mail" type="text" id="contactinput" autocomplete="off"/>
+                                    <input placeholder="Número de teléfono" type="text" id="contactinput" autocomplete="off"/>   
+                                </div>
                             </div>
+                            <br/>
 
                             <div className="form-field">
-                                <label for="username">Ingresa tu número de teléfono</label>
-                                <input type="text" id="phonenumber" autocomplete="off"/>
+                                <label>¿Dónde enviaremos tu comida?</label>
+                                <div className="addressfield">
+                                    <input placeholder="Calle" type="text" id="addressinput" autocomplete="off"/>
+                                    <input placeholder="Número interior" type="text" id="addressinput" autocomplete="off"/>
+                                    <input placeholder="Número exterior" type="text" id="addressinput" autocomplete="off"/>
+                                </div>
+                                <div>
+                                    <input placeholder="Colonia" type="text" id="addressinput" autocomplete="off"/>
+                                    <input placeholder="Alcadía/Delegación" type="text" id="addressinput" autocomplete="off"/>
+                                    <input placeholder="Código Postal" type="text" id="addressinput" autocomplete="off"/>
+                                    </div>
                             </div>
-
-                            <div className="form-field">
-                                <label for="username">¿Dónde enviaremos tu comida?</label>
-                                <input type="text" id="calle" autocomplete="off"/>
-                                <input type="text" id="numeroext" autocomplete="off"/>
-                                <input type="text" id="numeroint" autocomplete="off"/>
-                                <input type="text" id="colonia" autocomplete="off"/>
-                                <input type="text" id="delegacion" autocomplete="off"/>
-                                <input type="text" id="ciudad" autocomplete="off"/>
-                                <input type="text" id="zipcode" autocomplete="off"/>
-                            </div><br/>
+                            <br/>
                             
 
                             <div className="form-field center-align">
