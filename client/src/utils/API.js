@@ -10,6 +10,10 @@ export default {
     return axios.get("/api/customers/" + id);
   },
 
+  validateCustomerEmail: function (email) {
+    return axios.get("/api/validateEmail/" + email);
+  },
+
   saveCustomer: function (customerInfo) {
     return axios.post("/api/newCustomer", customerInfo);
   },
@@ -27,6 +31,7 @@ export default {
   },
 
   getOrders: function () {
+    console.log("Entro a API de get orders");
     return axios.get("/api/orders");
   },
 
