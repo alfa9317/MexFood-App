@@ -1,4 +1,5 @@
 import React from "react";
+import Mapa from "../../components/Mapa/Mapa"
 import "./style.css";
 
 function Signup() {
@@ -46,15 +47,22 @@ function Signup() {
                                     <input placeholder="Colonia" type="text" id="addressinput" autocomplete="off"/>
                                     <input placeholder="Alcadía/Delegación" type="text" id="addressinput" autocomplete="off"/>
                                     <input placeholder="Código Postal" type="text" id="addressinput" autocomplete="off"/>
-                                    </div>
+                                </div>
                             </div>
                             <br/>
-                            
-                            <div> </div>
 
+                            <div  id="mapa">
+                                <map >
+                                    <Mapa/>
+                                </map>
+                            </div>
+                            <br/>
+                            <br/>
+                            
                             <div className="form-field center-align">
                                 <button className="pink darken-1">Registrarme</button>
-                            </div><br/>
+                            </div>
+                            <br/>
                         </div>
                     </div>
                 </div>
