@@ -2,6 +2,7 @@
 
 .gitignore
 /client/node_modules
+/config/config.json
 
 # dependencies
 /node_modules
