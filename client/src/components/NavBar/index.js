@@ -29,7 +29,7 @@ function NavBar(props) {
         </div>
         
         <ul id="slide_out_2" className="sidenav">
-            <li><div className="user-view">
+            <div className="user-view">
             <div className="background">
                 <img src="./assets/images/pinkBG.jpg"/>
             </div>
@@ -37,10 +37,10 @@ function NavBar(props) {
             <a href="#name"><span id = "sideBarUserName2" className="white-text name">Martín Sosa Rodríguez</span></a>
             <li><div className="divider"></div></li>
             <li><a className="waves-effect" href="/profile" id = "profile-button"><i className="material-icons">edit</i>Ver información de usuario</a></li>
-            </div></li>
+            </div>          
         </ul>
         <ul id="slide_out_1" className="sidenav">
-            <li><div className="user-view">
+            <div className="user-view">
             <div className="background">
                 <img src="./assets/images/pinkBG.jpg"/>
             </div>
@@ -48,7 +48,7 @@ function NavBar(props) {
             <a href="#name"><span id = "sideBarUserName2" className="white-text name">Martín Sosa Rodríguez</span></a>
             <li><div className="divider"></div></li>
             <li><a className="waves-effect" href="" id = "edit-button"><i className="material-icons">edit</i>Editar información</a></li>
-            </div></li>
+            </div>
             <li><a className="waves-effect" href="/"><i className="material-icons">home</i>Inicio</a></li>
             <li><a className="waves-effect" href="/orders"><i className="material-icons">list</i>Pedidos</a></li>
             <li><a className="waves-effect" href="/about-us"><i className="material-icons">pan_tool</i>Sobre nosotros</a></li>
