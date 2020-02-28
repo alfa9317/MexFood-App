@@ -15,6 +15,19 @@ module.exports = {
       res.json(dbCustomer);
     });
   },
+  validateEmail: function(req, res) {
+    db.Customer.findOne({
+      where: {
+        email: req.params.email
+      }
+    }).then(function(dbCust) {
+      if (!dbCust) {
+          res.json("CUSTOMER_NOT_EXIST");
+      } else {
+        res.json("CUSTOMER_VALID");
+      }
+    });
+  },
   create: function(req, res) {
     db.Customer.findOne({
       where: {
