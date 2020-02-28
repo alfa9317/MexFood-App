@@ -95,3 +95,11 @@ body{
     margin-left: 25px;
 
  }
+
+ #mapa {
+    width: 500px;
+    height: 500px;
+    background-color: darkgray;
+    display: inline-block;
+    margin-left: 200px;
+  }
