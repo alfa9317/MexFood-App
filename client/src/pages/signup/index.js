@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Mapa from "../../components/Mapa/Mapa"
+import AddressInput from "../../components/AddressInput/AddressInput"
 import "./style.css";
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
@@ -118,6 +119,7 @@ class SignUpFormBase extends Component {
                                     </div>
                                     <br />
 
+<<<<<<< HEAD
                                     <div className="form-field">
                                         <label>¿Dónde enviaremos tu comida?</label>
                                         <div className="addressfield">
@@ -132,6 +134,13 @@ class SignUpFormBase extends Component {
                                         </div>
                                     </div> */}
                                     <br />
+=======
+                            <div className="form-field">
+                                <label>¿Donde enviaremos tu comida?</label>
+                                <input placeholder="Dirección" type="text" id="addressinput" autocomplete="off"/>
+                            </div>
+                            <br/>
+>>>>>>> origin
 
                                     <div id="mapa">
                                         <map >

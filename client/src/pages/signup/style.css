@@ -1,4 +1,4 @@
-body{
+sbody{
     margin: 0;
     padding: 0;
 
@@ -79,7 +79,7 @@ body{
  }
 
 #addressinput {
-     width: 30%;
+     width: 95%;
      margin-left: 25px;
      font-size: smaller;
  }
