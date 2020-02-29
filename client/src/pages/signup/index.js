@@ -1,5 +1,6 @@
 import React from "react";
 import Mapa from "../../components/Mapa/Mapa"
+import AddressInput from "../../components/AddressInput/AddressInput"
 import "./style.css";
 
 function Signup() {
@@ -37,17 +38,8 @@ function Signup() {
                             <br/>
 
                             <div className="form-field">
-                                <label>¿Dónde enviaremos tu comida?</label>
-                                <div className="addressfield">
-                                    <input placeholder="Calle" type="text" id="addressinput" autocomplete="off"/>
-                                    <input placeholder="Número interior" type="text" id="addressinput" autocomplete="off"/>
-                                    <input placeholder="Número exterior" type="text" id="addressinput" autocomplete="off"/>
-                                </div>
-                                <div>
-                                    <input placeholder="Colonia" type="text" id="addressinput" autocomplete="off"/>
-                                    <input placeholder="Alcadía/Delegación" type="text" id="addressinput" autocomplete="off"/>
-                                    <input placeholder="Código Postal" type="text" id="addressinput" autocomplete="off"/>
-                                </div>
+                                <label>¿Donde enviaremos tu comida?</label>
+                                <input placeholder="Dirección" type="text" id="addressinput" autocomplete="off"/>
                             </div>
                             <br/>
 
