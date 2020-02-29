@@ -119,7 +119,6 @@ class SignUpFormBase extends Component {
                                     </div>
                                     <br />
 
-<<<<<<< HEAD
                                     <div className="form-field">
                                         <label>¿Dónde enviaremos tu comida?</label>
                                         <div className="addressfield">
@@ -134,13 +133,6 @@ class SignUpFormBase extends Component {
                                         </div>
                                     </div> */}
                                     <br />
-=======
-                            <div className="form-field">
-                                <label>¿Donde enviaremos tu comida?</label>
-                                <input placeholder="Dirección" type="text" id="addressinput" autocomplete="off"/>
-                            </div>
-                            <br/>
->>>>>>> origin
 
                                     <div id="mapa">
                                         <map >
