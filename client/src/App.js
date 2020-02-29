@@ -10,23 +10,30 @@ import Profile from "./pages/Profile"
 import Signup from "./pages/signup"
 import Button from '@material-ui/core/Button'
 import NavBar from "./components/NavBar"
+import { withAuthentication } from '../../client/src/components/Session';
+import PasswordForgetPage from '../src/components/PasswordForget/index';
 
 
-function App() {
-    return (
-      <Router>
-        <div className="App">
-         <Route exact path="/login" component={Login} />
-         <Route exact path="/" component={Home} />
-         <Route exact path="/about-us" component={AboutUs} />
-         <Route exact path="/menu" component={Menu} />
-         <Route exact path="/orders" component={Orders} />
-         <Route exact path="/profile" component={Profile} />
-         <Route exact path="/signup" component={Signup} />
-       </div>
-      </Router>
-      
-    );
+
+const App = () => {
+  return (
+    <Router>
+      <div className="App">
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about-us" component={AboutUs} />
+        <Route exact path="/menu" component={Menu} />
+        <Route exact path="/orders" component={Orders} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/signup" component={Signup} />
+        <Route
+          path="/pwd-forget"
+          component={PasswordForgetPage}
+        />
+      </div>
+    </Router>
+
+  );
 }
 
-export default App;
+export default withAuthentication(App);

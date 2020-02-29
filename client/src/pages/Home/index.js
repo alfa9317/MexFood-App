@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../../components/NavBar"
+import { withAuthorization } from '../../components/Session';
 
 import "./style.css";
 
@@ -46,4 +47,5 @@ function Home(props) {
 }
 
 
-export default Home;
+const condition = authUser => !!authUser;
+export default withAuthorization(condition)(Home);
