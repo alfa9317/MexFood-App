@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 import NavBar from "../../components/NavBar"
 import { withAuthorization } from '../../components/Session';
-import NavBar from "../../components/NavBar";
 import FAQs from "../../components/FAQs/faqs";
 import AboutContainer from "../../components/AboutContainer/aboutcontainer";
 import ContactForm from "../../components/ContactForm/contactform";
