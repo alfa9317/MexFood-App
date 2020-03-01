@@ -3,7 +3,11 @@ import "./style.css";
 import NavBar from "../../components/NavBar";
 import Container from "../../components/Container";
 import API from "../../utils/API";
+<<<<<<< HEAD
 import { Link, Route } from "react-router-dom";
+=======
+import { withAuthorization } from '../../components/Session';
+>>>>>>> 602cf14ed6e2e44e96bcb40d477137a1147aa024
 
 class Orders extends Component {
 
@@ -80,4 +84,5 @@ class Orders extends Component {
 }
 
 
-export default Orders;
+const condition = authUser => !!authUser;
+export default withAuthorization(condition)(Orders);
