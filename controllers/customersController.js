@@ -1,4 +1,6 @@
+const email = require("../utils/sendMail");
 const db = require("../models");
+
 
 module.exports = {
   findAll: function(req, res) {
@@ -36,6 +38,8 @@ module.exports = {
     }).then(function(dbCust) {
       if (!dbCust) {
         db.Customer.create(req.body).then(function() {
+          console.log(email);
+          email.newCustomer(req.body.email);
           res.json("Customer registered successfully");
         });
       } else {
