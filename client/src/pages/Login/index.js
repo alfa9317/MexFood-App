@@ -69,29 +69,12 @@ class SignInFormBase extends Component {
                                     />
                                     <PasswordForgetLink />
                                     <SignUpLink />
-                                    <button disabled={isInvalid} type="submit">
+                                    <button className="pink darken-1 waves-effect waves-light" disabled={isInvalid} type="submit">
                                         Sign In
                                     </button>
+                                    <br /><br />
                                     {error && <p>{error.message}</p>}
                                 </form>
-                                {/* <div className="card-content left-align">
-                                    <div className="form-field">
-                                        <label for="username">Usuario</label>
-                                        <input type="text" id="username" />
-                                    </div>
-                                    <div className="form-field">
-                                        <label for="password">Contraseña</label>
-                                        <input type="password" id="password" />
-                                    </div><br />
-                                    <div className="form-field">
-                                        <label>
-                                            <input type="checkbox" />
-                                            <span>Recuérdame</span>
-                                        </label>
-                                    </div><br />
-                                    <div className="form-field center-align">
-                                        <button className="pink darken-1 waves-effect waves-light">Continuar</button>
-                                    </div><br /> */}
                             </div>
                         </div>
                     </div>
