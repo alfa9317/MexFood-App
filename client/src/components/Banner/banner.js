@@ -4,8 +4,10 @@ import "./style.css";
 function Banner () {
     return (
         <div>
-            <div>
-                <img id="bannersize" src={require('./mexican-food-web-banner-flat-design-vector-9408134.jpg')} />  
+            <div id="bannersize">
+                <h4>Sabor casero </h4>
+                <h4>donde quiera que</h4>
+                <h4> te encuentres</h4>
             </div>         
         </div>
     )
