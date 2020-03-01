@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import SignOutButton from '../SignOut/index';
+import logo from "./logo.png"
+import profilePic from "./profilePic.jpg"
 
 
 function NavBar(props) {
@@ -11,7 +13,7 @@ function NavBar(props) {
                 <nav className=" pink darken-1">
                     <div className="nav-wrapper">
                         <div className="container">
-                            <a href="#" className="brandLogo left"><img id="navBarLogoImage" className="brand-logo" src="./assets/images/logo.png" /></a>
+                            <a href="#" className="brandLogo left"><img id="navBarLogoImage" className="brand-logo" src={logo} /></a>
                             <a href="#" className="sidenav-trigger" data-target="slide_out_1"><i className="material-icons">menu</i></a>
                             <ul className="hide-on-med-and-down right">
                                 <li>
@@ -21,7 +23,7 @@ function NavBar(props) {
                                 <li><Link to="/about-us" className={window.location.pathname === "/about-us" ? "active" : ""}>Sobre nosotros</Link></li>
                                 <li>
                                     <a href="#" data-target="slide_out_2" className="sidenav-trigger show-on-large">
-                                        <img id="navBarUserImage" className="circle" src="./assets/images/profilePic.jpg" />
+                                        <img id="navBarUserImage" className="circle" src={profilePic} />
                                     </a>
                                 </li>
                                 <li>

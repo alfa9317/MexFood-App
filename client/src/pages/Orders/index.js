@@ -3,11 +3,8 @@ import "./style.css";
 import NavBar from "../../components/NavBar";
 import Container from "../../components/Container";
 import API from "../../utils/API";
-<<<<<<< HEAD
 import { Link, Route } from "react-router-dom";
-=======
 import { withAuthorization } from '../../components/Session';
->>>>>>> 602cf14ed6e2e44e96bcb40d477137a1147aa024
 
 class Orders extends Component {
 
@@ -25,10 +22,6 @@ class Orders extends Component {
       console.log(res);
       this.setState({orders: res.data})
     }).catch(err => console.log(err));
-  }
-
-  handleClick = (id) =>{
-    
   }
 
   handleInputChange = event => {
@@ -63,7 +56,6 @@ class Orders extends Component {
                                     <span style={{fontWeight:'bold'}}>Monto total a pagar: ${order.totalPrice}</span>
                                     <br/>
                                     <br/>
-                                    {/* <a href="#" class="card-action-right" order-num={order.id} style={{color: 'black',fontWeight:'bold'}} onClick={() => this.handleClick(order.id)}>Detalle de la orden</a> */}
                                     <Link to={`orders/detail/${order.id}`} role="button" className="btn btn-link card-action-right" style={{color: 'black',fontWeight:'bold'}}> Detalle de la orden</Link>
                                     <br/>
                                     <br/>
@@ -82,7 +74,6 @@ class Orders extends Component {
   }
   
 }
-
 
 const condition = authUser => !!authUser;
 export default withAuthorization(condition)(Orders);
