@@ -8,7 +8,6 @@ import "./style.css";
 
 const SignInPage = () => (
     <div>
-     
         <SignInForm />
     </div>
 );
@@ -47,34 +46,44 @@ class SignInFormBase extends Component {
                 <div className="blur"></div>
                 <div className="container">
                     <div className="row login">
-                        <div className="col s8 8 offset-s2">
+                        <div className="col s8 10 offset-s2">
                             <div className="card">
                                 <div className="card-action pink darken-1 white-text center-align">
                                     <h3>Inicio de sesión</h3>
                                 </div>
-                                <form onSubmit={this.onSubmit}>
-                                    <input
-                                        name="email"
-                                        value={email}
-                                        onChange={this.onChange}
-                                        type="text"
-                                        placeholder="Email Address"
-                                    />
-                                    <input
-                                        name="password"
-                                        value={password}
-                                        onChange={this.onChange}
-                                        type="password"
-                                        placeholder="Password"
-                                    />
-                                    <PasswordForgetLink />
-                                    <SignUpLink />
-                                    <button className="pink darken-1 waves-effect waves-light" disabled={isInvalid} type="submit">
-                                        Sign In
-                                    </button>
-                                    <br /><br />
-                                    {error && <p>{error.message}</p>}
-                                </form>
+                                <div className="card-content left-align">
+                                    <div className="formField">
+                                        <label for="username">Usuario</label>
+                                        <input 
+                                            type="text" 
+                                            id="username"
+                                            name="email"
+                                            value={email}
+                                            onChange={this.onChange}
+                                            style={{marginLeft:'0px'}}
+                                        />
+                                    </div><br/>
+                                    <div className="form-field left-align">
+                                        <label for="password">Contraseña</label>
+                                        <input 
+                                            type="password" 
+                                            id="password"
+                                            name="password"
+                                            value={password}
+                                            onChange={this.onChange}
+                                            style={{marginLeft:'0px'}}
+                                        />
+                                    </div><br/>
+                                    <div className="form-field center-align">
+                                        <button className="pink darken-1 waves-effect waves-light" type="submit" onClick={this.onSubmit}>Continuar</button>
+                                    </div><br/>
+                                    <div className="center-align">
+                                        <PasswordForgetLink/>
+                                        <br/>
+                                        <SignUpLink/>
+                                    </div>
+                                    <br/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -84,6 +93,30 @@ class SignInFormBase extends Component {
         );
     }
 }
+
+{/* <form onSubmit={this.onSubmit}>
+                                        <input
+                                            name="email"
+                                            value={email}
+                                            onChange={this.onChange}
+                                            type="text"
+                                            placeholder="Email Address"
+                                        />
+                                        <input
+                                            name="password"
+                                            value={password}
+                                            onChange={this.onChange}
+                                            type="password"
+                                            placeholder="Password"
+                                        />
+                                        <PasswordForgetLink />
+                                        <SignUpLink />
+                                        <button className="pink darken-1 waves-effect waves-light" disabled={isInvalid} type="submit">
+                                            Sign In
+                                        </button>
+                                        <br /><br />
+                                        {error && <p>{error.message}</p>}
+                                    </form> */}
 
 const SignInForm = compose(
     withRouter,
