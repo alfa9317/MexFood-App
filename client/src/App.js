@@ -21,13 +21,15 @@ const App = () => {
       <div className="App">
         <Route exact path="/welcome" component={Welcome} />
         <Route exact path="/login" component={Login} />
+
+        <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/aboutus" component={AboutUs} />
-        <Route exact path="/menu" component={Menu} />
-        <Route exact path="/" component={Profile} />
+        <Route exact path="/profile" component={Profile} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/orders" component={Orders} />
-        <Route path="/orders/detail" component={OrdersDetail}/>
+        <Route path="/orders/detail/:id" component={OrdersDetail}/>
+        <Route path="/menu/:type" component={Menu} />
         <Route path="/pwd-forget" component={PasswordForgetPage} />
       </div>
     </Router>

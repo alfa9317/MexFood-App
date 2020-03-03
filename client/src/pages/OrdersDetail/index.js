@@ -6,6 +6,7 @@ import API from "../../utils/API";
 import { Button, DatePicker, Card, Avatar } from 'antd';
 import { Row, Col, Divider } from 'antd';
 import 'antd/dist/antd.css';
+import imag from '../../assets/images/comida/pan.jpeg'
 var dateFormat = require('dateformat');
 const { Meta } = Card;
 
@@ -70,7 +71,7 @@ class OrdersDetail extends Component {
                           <Row>
                             <Col xs={24} sm={24} md={124} lg={24} xl={24}>
                               <Meta style={{width:'100%'}}
-                                avatar={<Avatar src={"https://dorastable.com/wp-content/uploads/2014/11/sopa-de-fideo-7.jpg"} style={{width:'10vw',height:'auto',borderRadius:'15px',boxShadow: '0 8px 16px 0 rgba(0,0,0,0.5)'}} />}
+                                avatar={<Avatar src={`../${order.Food.Picture}`} style={{width:'10vw',height:'auto',borderRadius:'15px',boxShadow: '0 8px 16px 0 rgba(0,0,0,0.5)'}} />}
                                 title={order.Food.FoodName}
                                 description={`Categoría: ${order.Food.Category}`}
                               />

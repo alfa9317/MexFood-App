@@ -18,9 +18,9 @@ function Home(props) {
                     {/* <span className="white-text">I am a very simple card. I am good at containing small bits of information.
                     I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
                     </span> */}
-                    <a href="/menu-page"><button className="button"><img src="https://i.pinimg.com/originals/ef/96/b7/ef96b7ca0f841d9ef0a0ac41a3a19374.jpg" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Desayunos</button></a>
-                    <a href="/menu-page"><button className="button"><img src="https://encolombia.com/wp-content/uploads/2019/05/Comidas-Bajas-en-Calor%C3%ADas-para-Toda-la-Semana-696x398.jpg" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Comidas</button></a>
-                    <a href="/menu-page/vegetariano"><button className="button"><img src="https://cdn.ticbeat.com/src/uploads/2019/06/verano-810x540.jpg" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Menú Vegetariano</button></a>
+                    <a href="/menu/desayuno"><button className="button"><img src="https://i.pinimg.com/originals/ef/96/b7/ef96b7ca0f841d9ef0a0ac41a3a19374.jpg" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Desayunos</button></a>
+                    <a href="/menu/comida"><button className="button"><img src="https://encolombia.com/wp-content/uploads/2019/05/Comidas-Bajas-en-Calor%C3%ADas-para-Toda-la-Semana-696x398.jpg" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Comidas</button></a>
+                    <a href="/menu/vegetariana"><button className="button"><img src="https://cdn.ticbeat.com/src/uploads/2019/06/verano-810x540.jpg" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Menú Vegetariano</button></a>
                 </div>
             </div>
             <div className = "col s6">  
