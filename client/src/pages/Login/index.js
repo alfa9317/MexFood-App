@@ -44,9 +44,8 @@ class SignInFormBase extends Component {
         return (
             <div className="mainContainer">
                 <div className="blur"></div>
-                <div className="container">
                     <div className="row login">
-                        <div className="col s8 10 offset-s2">
+                        <div className="col s12 m8 l6 xl6 offset-m2 offset-l3 offset-xl3">
                             <div className="card">
                                 <div className="card-action pink darken-1 white-text center-align">
                                     <h3>Inicio de sesión</h3>
@@ -87,7 +86,6 @@ class SignInFormBase extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
            
         );
