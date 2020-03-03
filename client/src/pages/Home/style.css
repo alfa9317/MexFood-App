@@ -25,16 +25,12 @@
 
 .ant-carousel .slick-slide {
     text-align: center;
-    height: 446px;
-    line-height: 446px;
-    background: #364d79;
+    height: 0px;
+    line-height:0px;
+    background: grey;
     overflow: hidden;
   }
   
   .ant-carousel .slick-slide h3 {
     color: #fff;
-  }
-
-  .mainHomeContainer{
-    position: relative;
   }
