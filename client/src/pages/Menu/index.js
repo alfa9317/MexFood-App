@@ -117,6 +117,7 @@ handleInputChange = event => {
     return (
       <div className="mainContainer">
           <NavBar/>
+          <h1 id="menuTitle">{this.props.match.params.type}</h1>
           {this.state.fullMenu.length > 0 ? (
             <div className="menuContainer">
             {this.state.entradas.length ? (

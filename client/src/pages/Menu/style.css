@@ -1,3 +1,5 @@
-.menuContainer{
-    margin-top: 100px;
+#menuTitle{
+    margin-top: 40px;
+    font-family: 'Caveat', cursive;
+    text-transform: uppercase;
 }

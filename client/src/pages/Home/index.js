@@ -3,6 +3,13 @@ import NavBar from "../../components/NavBar"
 import { Carousel } from 'antd';
 import { Row, Col} from 'antd';
 import { withAuthorization } from '../../components/Session';
+import desayuno from './homeImages/desayuno.png'
+import comida from './homeImages/comida.png'
+import vegetariano from './homeImages/salad.png'
+import slide1 from './homeImages/slide-desayunosrosa.jpg'
+import slide2 from './homeImages/slide-emapques.jpg'
+import slide3 from './homeImages/slide-pagotarjeta.jpg'
+import slide4 from './homeImages/slide-vegerariano2.jpg'
 
 import "./style.css";
 
@@ -12,27 +19,27 @@ function Home(props) {
       <NavBar/>
         <Carousel autoplay>
             <div>
-            <h3>1</h3>
+            <img src={slide1}/>
             </div>
             <div>
-            <h3>2</h3>
+            <img src={slide2}/>
             </div>
             <div>
-            <h3>3</h3>
+            <img src={slide3}/>
             </div>
             <div>
-            <h3>4</h3>
+            <img src={slide4}/>
             </div>
         </Carousel>
-        <Row justify="center">
-            <Col span={6}>
-            <a href="/menu/desayuno"><button className="button"><img src="../../assets/images/homeImages/comida.png" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Desayunos</button></a>
+        <Row style={{marginTop:'20px'}}>
+            <Col xs={{ span: 24, offset: 0 }} sm={{ span: 24, offset: 0 }} md={{ span: 8, offset: 0 }} lg={{ span: 8, offset: 0 }} xl={{ span: 8, offset: 0 }}>
+            <a href="/menu/desayuno"><button className="button"><img src={desayuno} alt="menuImage" style={{width: '5vw', height: 'auto'}}/><br/><br/>Desayunos</button></a>
             </Col>
-            <Col span={6}>
-            <a href="/menu/comida"><button className="button"><img src="./homeImages/comida.png" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Comidas</button></a>
+            <Col xs={{ span: 24, offset: 0 }} sm={{ span: 24, offset: 0 }} md={{ span: 8, offset: 0 }} lg={{ span: 8, offset: 0 }} xl={{ span: 8, offset: 0 }}>
+            <a href="/menu/comida"><button className="button"><img src={comida} alt="menuImage" style={{width: '5vw', height: 'auto'}}/><br/><br/>Comidas</button></a>
             </Col>
-            <Col span={6}>
-            <a href="/menu/vegetariana"><button className="button"><img src="homeImages/salad.png" alt="menuImage" style={{width: '100px', height: 'auto'}}/><br/><br/>Menú Vegetariano</button></a>
+            <Col xs={{ span: 24, offset: 0 }} sm={{ span: 24, offset: 0 }} md={{ span: 8, offset: 0 }} lg={{ span: 8, offset: 0 }} xl={{ span: 8, offset: 0 }}>
+            <a href="/menu/vegetariana"><button className="button"><img src={vegetariano} alt="menuImage" style={{width: '5vw', height: 'auto'}}/><br/><br/>Menú Vegetariano</button></a>
             </Col>
         </Row>
   </div>
