@@ -22,3 +22,19 @@
     box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.4s ease 0s;
 }
+
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 446px;
+    line-height: 446px;
+    background: #364d79;
+    overflow: hidden;
+  }
+  
+  .ant-carousel .slick-slide h3 {
+    color: #fff;
+  }
+
+  .mainHomeContainer{
+    position: relative;
+  }

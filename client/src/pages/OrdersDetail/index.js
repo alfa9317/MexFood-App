@@ -68,8 +68,9 @@ class OrdersDetail extends Component {
                     <Card>
                       {this.state.orderInfo.OrderLines.map(order => {
                         return (
-                          <Row>
-                            <Col xs={24} sm={24} md={124} lg={24} xl={24}>
+                          <div>
+                            <Row>
+                            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                               <Meta style={{width:'100%'}}
                                 avatar={<Avatar src={`../${order.Food.Picture}`} style={{width:'10vw',height:'auto',borderRadius:'15px',boxShadow: '0 8px 16px 0 rgba(0,0,0,0.5)'}} />}
                                 title={order.Food.FoodName}
@@ -77,6 +78,8 @@ class OrdersDetail extends Component {
                               />
                             </Col>
                           </Row>
+                           <br/>
+                          </div>
                         );
                       })}
                     </Card>
