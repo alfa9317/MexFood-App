@@ -21,11 +21,11 @@ const App = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/" component={Home} />
         <Route exact path="/about-us" component={AboutUs} />
-        <Route exact path="/menu" component={Menu} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/orders" component={Orders} />
         <Route path="/orders/detail/:id" component={OrdersDetail}/>
+        <Route path="/menu/:type" component={Menu} />
         <Route path="/pwd-forget" component={PasswordForgetPage} />
       </div>
     </Router>
