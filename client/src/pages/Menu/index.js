@@ -5,18 +5,27 @@ import Wrapper from "../../components/Wrapper"
 import NavBar from "../../components/NavBar";
 import API from "../../utils/API";
 import { Row, Col, Divider } from 'antd';
+import { Button } from 'antd';
 import { withAuthorization } from '../../components/Session';
 import { renderComponent } from "recompose";
+var bool = false;
 
 class Menu extends Component {
   
 state = {
+  fullMenu: [],
   entradas: [],
   guarniciones: [],
   platillos: [],
   postres: [],
   bebidas: [],
-  complementos: []
+  complementos: [],
+  entrada: "",
+  guarnicion: "",
+  platillo: "",
+  postre: "",
+  bebida: "",
+  complemento: "",
 }
 
 componentDidMount = () =>{
@@ -32,8 +41,68 @@ loadFoodCatalog = () =>{
     var postres = res.data.filter(food => food.Category === "postre");
     var bebidas = res.data.filter(food => food.Category === "bebida");
     var complementos = res.data.filter(food => food.Category === "complemento");
-    this.setState({entradas: entradas, guarniciones: guarniciones, platillos: platillos, postres:postres, bebidas: bebidas, complementos: complementos})
+    this.setState({fullMenu: res.data, entradas: entradas, guarniciones: guarniciones, platillos: platillos, postres:postres, bebidas: bebidas, complementos: complementos})
   }).catch(err => console.log(err));
+}
+
+handleClick = (name,value,id) => {
+  switch(name) {
+    case "entrada":
+      if(value !== this.state.entrada){
+        this.setState({entrada: value});
+      }else{
+        this.setState({entrada: ""});
+      }
+      break;
+    case "guarnicion":
+      if(value !== this.state.guarnicion){
+        this.setState({guarnicion: value});
+      }else{
+        this.setState({guarnicion: ""});
+      }
+      break;
+    case "platillo":
+      if(value !== this.state.platillo){
+        this.setState({platillo: value});
+      }else{
+        this.setState({platillo: ""});
+      }
+      break;
+    case "postre":
+      if(value !== this.state.postre){
+        this.setState({postre: value});
+      }else{
+        this.setState({postre: ""});
+      }
+      break;
+    case "bebida":
+      if(value !== this.state.bebida){
+        this.setState({bebida: value});
+      }else{
+        this.setState({bebida: ""});
+      }
+      break;
+    case "complemento":
+      if(value !== this.state.complemento){
+        this.setState({complemento: value});
+      }else{
+        this.setState({complemento: ""});
+      }
+      break;
+    default:
+      console.log("invalid parameter");
+  }
+ 
+  // console.log(this.state.entrada)
+  // console.log(this.state.entrada)
+  // console.log(name,value);
+}
+
+onSubmit = () =>{ 
+  var tempArray = [this.state.entrada,this.state.guarnicion,this.state.platillo,this.state.postre,this.state.bebida,this.state.complemento]
+  var submitArray = tempArray.filter(element => element !== "");
+  console.log(submitArray);
+  API.createOrder(submitArray).then(alert("success")).catch()
 }
 
 handleInputChange = event => {
@@ -41,14 +110,17 @@ handleInputChange = event => {
   this.setState({
     [name]: value
   });
+  
 };
 
   render(){
     return (
       <div className="mainContainer">
           <NavBar/>
-          <div className="menuContainer">
+          {this.state.fullMenu.length > 0 ? (
+            <div className="menuContainer">
             {this.state.entradas.length ? (
+
               <Wrapper >
               <Divider orientation="left" style={{ color: '#333', fontWeight: 'normal' }}>Entradas</Divider>
               {this.state.entradas.map(food => (
@@ -57,8 +129,11 @@ handleInputChange = event => {
                   status={food.status}
                   id={food.id}
                   key={food.id}
-                  name={food.FoodName}
+                  name={food.Category}
+                  value={food.FoodName}
                   image={food.Picture}
+                  clicked={food.FoodName === this.state.entrada ? (true) :(false)}
+                  
                 />
               ))}
             </Wrapper>
@@ -74,8 +149,10 @@ handleInputChange = event => {
                     status={food.status}
                     id={food.id}
                     key={food.id}
-                    name={food.FoodName}
+                    name={food.Category}
+                    value={food.FoodName}
                     image={food.Picture}
+                    clicked={food.FoodName === this.state.guarnicion ? (true) :(false)}
                   />
                 ))}
               </Wrapper>
@@ -91,8 +168,10 @@ handleInputChange = event => {
                       status={food.status}
                       id={food.id}
                       key={food.id}
-                      name={food.FoodName}
+                      name={food.Category}
+                      value={food.FoodName}
                       image={food.Picture}
+                      clicked={food.FoodName === this.state.platillo ? (true) :(false)}
                     />
                   ))}
                 </Wrapper>
@@ -108,8 +187,10 @@ handleInputChange = event => {
                         status={food.status}
                         id={food.id}
                         key={food.id}
-                        name={food.FoodName}
+                        name={food.Category}
+                        value={food.FoodName}
                         image={food.Picture}
+                        clicked={food.FoodName === this.state.postre ? (true) :(false)}
                       />
                     ))}
                 </Wrapper>
@@ -125,8 +206,10 @@ handleInputChange = event => {
                       status={food.status}
                       id={food.id}
                       key={food.id}
-                      name={food.FoodName}
+                      name={food.Category}
+                      value={food.FoodName}
                       image={food.Picture}
+                      clicked={food.FoodName === this.state.bebida ? (true) :(false)}
                     />
                   ))}
                   </Wrapper>
@@ -142,15 +225,24 @@ handleInputChange = event => {
                       status={food.status}
                       id={food.id}
                       key={food.id}
-                      name={food.FoodName}
+                      name={food.Category}
+                      value={food.FoodName}
                       image={food.Picture}
+                      clicked={food.FoodName === this.state.complemento ? (true) :(false)}
                     />
                   ))}
                 </Wrapper>
                   ) : (
                     <></>
                   )}
+            <br/>
+            <Button type="primary" size='large'block onClick={this.onSubmit} style={{height:'15vh'}}>
+              Generar orden
+            </Button>
           </div>
+          ):(
+            <h1>No hay resultados que mostrar</h1>
+          )}
       </div>
     );
   }
