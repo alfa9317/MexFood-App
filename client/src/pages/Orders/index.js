@@ -5,6 +5,7 @@ import Container from "../../components/Container";
 import API from "../../utils/API";
 import { Link, Route } from "react-router-dom";
 import { withAuthorization } from '../../components/Session';
+var dateFormat = require('dateformat');
 
 class Orders extends Component {
 
@@ -43,12 +44,12 @@ class Orders extends Component {
                     return (
                       <div className="row">
                         <div className="col s10 10 offset-s1">
-                            <div className="card pink darken-1 left-align">
-                                <div className="card-content white-text">
+                            <div className="card orderCard left-align">
+                                <div className="card-content blue-text text-darken-2">
                                     <div className="card__meta">
-                                        <time>{order.OrderDate}</time>
+                                        <time>{dateFormat(order.OrderDate, "dddd, mmmm d, yyyy - h:MM TT")}</time>
                                     </div>
-                                    <span className="card-title"style={{fontWeight:'bold'}}>Orden #{order.id}</span>
+                                    <span className="card-title"style={{color: '#37474f',fontWeight:'bold'}}>Orden #{order.id}</span>
                     
                                     <span>Estatus de la orden: {order.OrderStatus}</span>
                                 </div>
@@ -56,7 +57,7 @@ class Orders extends Component {
                                     <span style={{fontWeight:'bold'}}>Monto total a pagar: ${order.totalPrice}</span>
                                     <br/>
                                     <br/>
-                                    <Link to={`orders/detail/${order.id}`} role="button" className="btn btn-link card-action-right" style={{color: 'black',fontWeight:'bold'}}> Detalle de la orden</Link>
+                                    <Link to={`orders/detail/${order.id}`} role="button" className="btn btn-link light-blue darken-1 card-action-right" style={{color: 'black',fontWeight:'bold'}}> Detalle de la orden</Link>
                                     <br/>
                                     <br/>
                                 </div>
