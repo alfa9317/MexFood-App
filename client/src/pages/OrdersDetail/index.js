@@ -3,6 +3,12 @@ import "./style.css";
 import NavBar from "../../components/NavBar";
 import Container from "../../components/Container";
 import API from "../../utils/API";
+import { Button, DatePicker, Card, Avatar } from 'antd';
+import { Row, Col, Divider } from 'antd';
+import 'antd/dist/antd.css';
+var dateFormat = require('dateformat');
+const { Meta } = Card;
+
 
 class OrdersDetail extends Component {
 
@@ -29,6 +35,7 @@ class OrdersDetail extends Component {
     });
   };
 
+
   render(){
     return (
       <div className="mainContainer">
@@ -37,10 +44,44 @@ class OrdersDetail extends Component {
           <br/>
           {this.state.testID !== -1 ? (
             <Container>
-              <h1>{this.state.orderInfo.id}</h1>
-              <h1></h1>
-              <h1></h1>
-              <h1></h1>
+                <div style={{margin:'50px 100px 0 100px'}}>
+                  <Card title={`Detalle orden #${this.state.orderInfo.id}`} align="start"  extra={<a href="#">Editar información</a>} style={{ width:'100%'}}>
+                    <Row>
+                      <Col xs={24} sm={12} md={12} lg={4} xl={6}>
+                        <div>Precio total: ${this.state.orderInfo.OrderLines[0].OrderPrice} MXN</div>
+                      </Col>
+                      <Col xs={24} sm={12} md={12} lg={4} xl={6}>
+                        <div>Estatus: {this.state.orderInfo.OrderStatus}</div>
+                      </Col>
+                      <Col xs={24} sm={12} md={12} lg={8} xl={6}>
+                        <div>Fecha de pedido:  {dateFormat(this.state.orderInfo.createdAt, "m/d/yy, h:MM TT")}</div>
+                      </Col>
+                      <Col xs={24} sm={12} md={12} lg={8} xl={6}>
+                        <div>Última actualización: {dateFormat(this.state.orderInfo.updatedAt, "m/d/yy, h:MM TT")}</div>
+                      </Col>
+                    </Row>
+                    <br/>
+                    <Divider orientation="left" style={{ color: '#333', fontWeight: 'normal' }}></Divider>
+                    <h6 align="start" style={{fontSize:'12px'}}>Lista de selección:</h6>
+                    <br/>
+                    <Card>
+                      {this.state.orderInfo.OrderLines.map(order => {
+                        return (
+                          <Row>
+                            <Col xs={24} sm={24} md={124} lg={24} xl={24}>
+                              <Meta style={{width:'100%'}}
+                                avatar={<Avatar src={"https://dorastable.com/wp-content/uploads/2014/11/sopa-de-fideo-7.jpg"} style={{width:'10vw',height:'auto',borderRadius:'15px',boxShadow: '0 8px 16px 0 rgba(0,0,0,0.5)'}} />}
+                                title={order.Food.FoodName}
+                                description={`Categoría: ${order.Food.Category}`}
+                              />
+                            </Col>
+                          </Row>
+                        );
+                      })}
+                    </Card>
+                    <br/>
+                  </Card>
+                </div>
             </Container>
             ) : (
               <h3>No Results to Display</h3>
