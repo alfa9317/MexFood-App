@@ -25,8 +25,8 @@
 
 .ant-carousel .slick-slide {
     text-align: center;
-    height: 0px;
-    line-height:0px;
+    height: 446px;
+    line-height:10px;
     background: grey;
     overflow: hidden;
   }
@@ -34,3 +34,15 @@
   .ant-carousel .slick-slide h3 {
     color: #fff;
   }
+
+.slideContainer{
+    position: relative;
+    text-align: center;
+}
+
+.textCentered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

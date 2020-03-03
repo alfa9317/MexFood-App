@@ -18,17 +18,18 @@ function Home(props) {
   <div className="mainHomeContainer">
       <NavBar/>
         <Carousel autoplay>
-            <div>
+            <div className="slideContainer">
             <img src={slide1}/>
+            <h1 className="textCentered" style={{top:'33%',left:'60%',color: 'black', fontSize:'4vw'}}>{"¡Hola!"}</h1>
+            <h3 className="textCentered" style={{top:'60%',left:'70%',color: 'black', fontSize:'3vw'}}>{"Bienvenido a tu fondita"}</h3>
             </div>
-            <div>
+            <div className="slideContainer">
             <img src={slide2}/>
+            <h2 className="textCentered" style={{left:'45%'}}>Recibe tu comida en recipientes biodegradables</h2>
             </div>
-            <div>
-            <img src={slide3}/>
-            </div>
-            <div>
+            <div className="slideContainer">
             <img src={slide4}/>
+            <h1 className="textCentered" style={{left:'60%'}}>Comida que te consiente</h1>
             </div>
         </Carousel>
         <Row style={{marginTop:'20px'}}>
@@ -42,6 +43,8 @@ function Home(props) {
             <a href="/menu/vegetariana"><button className="button"><img src={vegetariano} alt="menuImage" style={{width: '5vw', height: 'auto'}}/><br/><br/>Menú Vegetariano</button></a>
             </Col>
         </Row>
+        <br/>
+        <br/>
   </div>
   );
 }
