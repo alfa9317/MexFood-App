@@ -10,8 +10,9 @@ function Welcome() {
       <div className="mainContainer">
         <WelcomeNavBar/>
         <br/>
+        <br/>
         <Banner/>
-        <h4>Sabor casero donde quiera que te encuentres</h4>
+        <br/>
         <Summary/>
         <Instructions/>
         {/* <SocialMedia/>

@@ -1,4 +1,7 @@
 #bannersize {
-    width: 1400px;
-    height: 340px;
+    background-image: url("./mexican-food-web-banner-flat-design-vector-9408134.jpg");
+    width: 1359px;
+    height: 333px;
+    display: inline-block;
+    color: white;
 }
