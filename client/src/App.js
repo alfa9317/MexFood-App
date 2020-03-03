@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Welcome from "./pages/welcome"
-import Login from "./pages/login"
-import Home from "./pages/home"
-import AboutUs from "./pages/aboutus"
-import Menu from "./pages/menu"
+import Login from "./pages/Login"
+import Home from "./pages/Home"
+import AboutUs from "./pages/AboutUs"
+import Menu from "./pages/Menu"
 import Orders from "./pages/Orders"
 import Profile from "./pages/Profile"
 import Signup from "./pages/signup"
@@ -21,10 +21,8 @@ const App = () => {
       <div className="App">
         <Route exact path="/welcome" component={Welcome} />
         <Route exact path="/login" component={Login} />
-
         <Route exact path="/" component={Home} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/aboutus" component={AboutUs} />
+        <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/orders" component={Orders} />
