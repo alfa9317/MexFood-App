@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import logo from "./logo.png"
 
 function AboutContainer() {
     return (
@@ -18,7 +19,7 @@ function AboutContainer() {
                         </div>
                         <br/>
                         <div class="card-stacked">
-                            <img src="\lunchbox.jpg"/>
+                            <img src={logo} style={{width:'400px',height:'auto'}}/>
                         </div>
                         
                         <div class="card-stacked">
