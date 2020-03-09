@@ -5,23 +5,26 @@ import { withAuthorization } from '../../components/Session';
 import FAQs from "../../components/FAQs/faqs";
 import AboutContainer from "../../components/AboutContainer/aboutcontainer";
 import ContactForm from "../../components/ContactForm/contactform";
+import {Animated} from "react-animated-css";
 
 function AboutUs() {
   return (
     <div className="mainContainer">
       <NavBar />
       <br/>
-      <h1>Sobre Nosostros</h1>
-      <div className="cardContainer">
-        <AboutContainer/>
-      </div>
-      <div className="cardContainer">
-      <FAQs/>
-      </div>
-      <div className="cardContainer">
-      <ContactForm/>
-      </div>
-      <br/>
+      <Animated animationIn="fadeIn" animationOut="fadeOut" animationInDelay={0.1} animationInDuration={1000} isVisible={true}>
+        <h1 className='aboutUsFont'>Sobre Nosostros</h1>
+        <div className="cardContainer aboutUsFon">
+          <AboutContainer/>
+        </div>
+        <div className="cardContainer aboutUsFon">
+        <FAQs/>
+        </div>
+        <div className="cardContainer aboutUsFon">
+        <ContactForm/>
+        </div>
+        <br/>
+      </Animated>
     </div>
   );
 };

@@ -8,6 +8,8 @@ import { Row, Col, Divider } from 'antd';
 import { Button } from 'antd';
 import { withAuthorization } from '../../components/Session';
 import { renderComponent } from "recompose";
+import { Link } from "react-router-dom";
+import {Animated} from "react-animated-css";
 var bool = false;
 
 class Menu extends Component {
@@ -117,9 +119,12 @@ handleInputChange = event => {
     return (
       <div className="mainContainer">
           <NavBar/>
-          <h1 id="menuTitle">{this.props.match.params.type}</h1>
+          <Animated animationIn="tada" animationOut="fadeOut" animationInDelay={0.8} animationInDuration={1000} isVisible={true}>
+            <h1 id="menuTitle">{this.props.match.params.type}</h1>
+          </Animated>
           {this.state.fullMenu.length > 0 ? (
-            <div className="menuContainer">
+            <Animated animationIn="fadeInUp" animationOut="fadeOut" animationInDuration={1000} isVisible={true}>
+              <div className="menuContainer">
             {this.state.entradas.length ? (
 
               <Wrapper >
@@ -238,11 +243,12 @@ handleInputChange = event => {
                   )}
             <br/>
             <Button type="primary" size='large'block onClick={this.onSubmit} style={{height:'15vh'}}>
-              Generar orden
+              <Link to="/">Generar Orden</Link>
             </Button>
           </div>
+            </Animated>
           ):(
-            <h1>No hay resultados que mostrar</h1>
+            <h1 className='noResults'></h1>
           )}
       </div>
     );

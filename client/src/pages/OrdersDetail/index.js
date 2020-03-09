@@ -7,6 +7,7 @@ import { Button, DatePicker, Card, Avatar } from 'antd';
 import { Row, Col, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import imag from '../../assets/images/comida/pan.jpeg'
+import {Animated} from "react-animated-css";
 var dateFormat = require('dateformat');
 const { Meta } = Card;
 
@@ -44,51 +45,53 @@ class OrdersDetail extends Component {
           <br/>
           <br/>
           {this.state.testID !== -1 ? (
-            <Container>
-                <div style={{margin:'50px 100px 0 100px'}}>
-                  <Card title={`Detalle orden #${this.state.orderInfo.id}`} align="start"  extra={<a href="#">Editar información</a>} style={{ width:'100%'}}>
-                    <Row>
-                      <Col xs={24} sm={12} md={12} lg={4} xl={6}>
-                        <div>Precio total: ${this.state.orderInfo.OrderLines[0].OrderPrice} MXN</div>
-                      </Col>
-                      <Col xs={24} sm={12} md={12} lg={4} xl={6}>
-                        <div>Estatus: {this.state.orderInfo.OrderStatus}</div>
-                      </Col>
-                      <Col xs={24} sm={12} md={12} lg={8} xl={6}>
-                        <div>Fecha de pedido:  {dateFormat(this.state.orderInfo.createdAt, "m/d/yy, h:MM TT")}</div>
-                      </Col>
-                      <Col xs={24} sm={12} md={12} lg={8} xl={6}>
-                        <div>Última actualización: {dateFormat(this.state.orderInfo.updatedAt, "m/d/yy, h:MM TT")}</div>
-                      </Col>
-                    </Row>
-                    <br/>
-                    <Divider orientation="left" style={{ color: '#333', fontWeight: 'normal' }}></Divider>
-                    <h6 align="start" style={{fontSize:'12px'}}>Lista de selección:</h6>
-                    <br/>
-                    <Card>
-                      {this.state.orderInfo.OrderLines.map(order => {
-                        return (
-                          <div>
-                            <Row>
-                            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                              <Meta style={{width:'100%'}}
-                                avatar={<Avatar src={`../${order.Food.Picture}`} style={{width:'10vw',height:'auto',borderRadius:'15px',boxShadow: '0 8px 16px 0 rgba(0,0,0,0.5)'}} />}
-                                title={order.Food.FoodName}
-                                description={`Categoría: ${order.Food.Category}`}
-                              />
-                            </Col>
-                          </Row>
-                           <br/>
-                          </div>
-                        );
-                      })}
+            <Animated animationIn="fadeIn" animationOut="fadeOut" animationInDuration={800} isVisible={true}>
+                <Container>
+                  <div style={{margin:'0 3vw 0 3vw'}}>
+                    <Card title={`Detalle orden #${this.state.orderInfo.id}`} align="start"  extra={<a href="#">Editar información</a>} style={{ width:'100%'}}>
+                      <Row>
+                        <Col xs={24} sm={12} md={12} lg={4} xl={6}>
+                          <div>Precio total: ${this.state.orderInfo.OrderLines[0].OrderPrice} MXN</div>
+                        </Col>
+                        <Col xs={24} sm={12} md={12} lg={4} xl={6}>
+                          <div>Estatus: {this.state.orderInfo.OrderStatus}</div>
+                        </Col>
+                        <Col xs={24} sm={12} md={12} lg={8} xl={6}>
+                          <div>Fecha de pedido:  {dateFormat(this.state.orderInfo.createdAt, "m/d/yy, h:MM TT")}</div>
+                        </Col>
+                        <Col xs={24} sm={12} md={12} lg={8} xl={6}>
+                          <div>Última actualización: {dateFormat(this.state.orderInfo.updatedAt, "m/d/yy, h:MM TT")}</div>
+                        </Col>
+                      </Row>
+                      <br/>
+                      <Divider orientation="left" style={{ color: '#333', fontWeight: 'normal' }}></Divider>
+                      <h6 align="start" style={{fontSize:'12px'}}>Lista de selección:</h6>
+                      <br/>
+                      <Card>
+                        {this.state.orderInfo.OrderLines.map(order => {
+                          return (
+                            <div>
+                              <Row>
+                              <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                                <Meta style={{width:'100%'}}
+                                  avatar={<Avatar src={`../${order.Food.Picture}`} style={{width:'10vw',height:'auto',borderRadius:'15px',boxShadow: '0 8px 16px 0 rgba(0,0,0,0.5)'}} />}
+                                  title={order.Food.FoodName}
+                                  description={`Categoría: ${order.Food.Category}`}
+                                />
+                              </Col>
+                            </Row>
+                            <br/>
+                            </div>
+                          );
+                        })}
+                      </Card>
+                      <br/>
                     </Card>
-                    <br/>
-                  </Card>
-                </div>
-            </Container>
+                  </div>
+              </Container>
+            </Animated>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 className='noResults'></h3>
             )}
       </div>
     );
