@@ -1,4 +1,5 @@
-<img src="./client/src/assets/logo.png" alt="logo" width="400"/>
+
+<img src="./readMeFiles/logo.png" alt="drawing" width="400"/>
 
 # Mi Fondita Express
 
@@ -23,7 +24,9 @@ In order to run the program, you will need to follow this steps:
 You can also just go to this url and try it:
       https://mi-fondita-express.herokuapp.com
 
-![alt text](./client/src/assets/mifondita.png)
+
+![alt text](./readMeFiles/mifondita.png)
+
 
 ## The Team:
 * Alejandro Vilchis - Authentication
@@ -40,4 +43,5 @@ Materialize,
 Ant Design,
 Heroku,
 Bazaart (Graphic Design),
+
 Visual Studio Code.
